@@ -1,0 +1,75 @@
+/* src/components/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+    background-color: #444;
+}
+
+.navbar-left .logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.navbar-center .nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-center .nav-links li {
+    margin-right: 2rem;
+}
+
+.navbar-center .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-center .nav-links a:hover {
+    color: #f44336;
+}
+
+
+.hamburger {
+    display: none;
+    /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+    .navbar-center .nav-links {
+        flex-direction: column;
+        display: none; /* Hide links by default */
+        position: absolute;
+        top: 60px; /* Adjust based on your navbar height */
+        left: 0;
+        background-color: #333;
+        width: 100%;
+    }
+
+    .navbar-center.active .nav-links {
+        display: flex; /* Show links when active */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
